@@ -1,5 +1,21 @@
-#include "batches.hpp"
+/*
+            DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE
+                    Version 2, December 2004
+
+ Copyright (C) 2004 Sam Hocevar <sam@hocevar.net>
+
+ Everyone is permitted to copy and distribute verbatim or modified
+ copies of this license document, and changing it is allowed as long
+ as the name is changed.
+
+            DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE
+   TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND MODIFICATION
+
+  0. You just DO WHAT THE FUCK YOU WANT TO.
+*/
+
 #include <iostream>
+#include "batches.hpp"
 #include "constants.hpp"
 
 batches::batches()
@@ -14,9 +30,8 @@ void batches::update(const std::string& word)
 
   /* Scan word and send its letter into different batches */
   for(unsigned int i=0; i<word.size(); i++)
-  {
     batch[i].insert(letters[i]);
-  } 
+
 }
 
 void batches::compute_words() const
@@ -32,22 +47,10 @@ void batches::compute_words() const
 
 void batches::info() const
 {
-  unsigned int size = 1;
+  size_t size = 1;
 
   for(auto& it : batch)
-  {
-
-    /*std::cout << "batch: ";
-    for(auto& it2: it)
-      {
-	std::cout << it2 << " - ";
-
-      }
-      std::cout << std::endl;
-    */
     size *= it.size();    
-
-  }
 
   std::cout << "Combinations:" << size << std::endl;;
 }
