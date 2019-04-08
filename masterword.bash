@@ -3,6 +3,6 @@
 
 ./masterword > A
 echo -n
-echo "Mot(s) trouve(s)":
+echo "Soluion(s)":
 grep -Fwf A masterword.dico
-
+rm ./A
